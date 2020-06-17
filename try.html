@@ -1,0 +1,28 @@
+<html>
+  <body>
+    <div id="demo">
+        <center><h1>
+          <a href = "#" onclick = "loadDoc()">  Notification </a>
+        </h1></center>
+    </div>
+
+  <script>
+   function loadDoc()
+  {
+      var xhttp;
+      xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementById("demo").innerHTML =
+        xhttp.responseText;
+    }
+  };
+          xhttp.open("GET", "session2.php", true);
+          xhttp.send();
+ }
+
+  </script>
+
+  </body>
+</html>
